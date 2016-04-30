@@ -1,5 +1,5 @@
 # Watchtower
-A tool for Syn Biologists
+A Workflow Management Tool for Synthetic Biologists
 
 ### Setting up the environment 
 
