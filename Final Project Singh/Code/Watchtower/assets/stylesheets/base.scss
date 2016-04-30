@@ -1,0 +1,79 @@
+/*
+    base.scss
+    Base html elements styling.
+*/
+
+* {
+  padding:0;
+  margin:0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  height: 100%;
+  min-width: $screen-width;
+}
+
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  line-height: 1.3;
+}
+
+main,
+li { display: block; }
+
+h1, h2, h3, h4 {
+  font-weight: 400;
+}
+
+h1    { font-size: $font-size-xxlarge;  }
+h2    { font-size: $font-size-xlarge;   }
+h3    { font-size: $font-size-large;    }
+h4,
+p     { font-size: $font-size-default;  }
+
+strong {
+  font-weight: bold;
+}
+
+a,
+button {
+  color: inherit;
+  transition: .1s;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  overflow: visible;
+  border: 0;
+  font: inherit;
+  -webkit-font-smoothing: inherit;
+  letter-spacing: inherit;
+  background: none;
+  cursor: pointer;
+}
+
+input, textarea, select {
+  font-family: inherit;
+}
+
+::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+:focus {
+  outline: 0;
+}

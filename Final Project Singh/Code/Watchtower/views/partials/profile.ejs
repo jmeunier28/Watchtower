@@ -1,0 +1,230 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Watchtower</title>
+  <link rel="stylesheet" type="text/css" href="stylesheet.css"></link>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="tree.css"></link>
+
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
+   <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="socket.io.js"></script>
+  <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+   <script src="http://d3js.org/d3.v3.min.js"></script>
+  <script src="dndTree.js"></script>
+<script src="javascript.js"></script>
+ 
+
+
+</head>
+
+<body>
+<div id="wrapper">
+
+  <div id="sidebar">
+    <% include ../partials/sidebar %>
+  </div>
+
+  <div id="content">
+    <div class="container">
+      <div id="load-overlay-main"></div>
+
+      <!-- Title Header -->
+      <div class="row box">
+        <div class="col-12">
+          <div class="jumbotron text-center"> 
+
+             <div class="block-md-v block-center">
+                <% include ../partials/sidebar_icon %>
+                <h1>Watchtower</h1>
+                <hr class="divider"></hr>
+
+                <p> Watches your every move ;)</p>
+
+              </div><!-- /.block-md-v .block-center -->
+        </div><!-- /.col-12 -->
+      </div><!-- /.row .box -->
+    </div>
+
+
+      <div class="row box">
+        <div class="col-12">
+          <div class="block-md-v block-center">
+              
+                 <div class="page-header text-center">
+                    <h1><span class="fa fa-anchor"></span> Profile Page</h1>
+                    <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+                  </div>
+
+    <div class="row">
+
+        <!-- LOCAL INFORMATION -->
+        <div class="col-sm-12">
+            <div class="well">
+                <h3><span class="fa fa-user"></span> Local</h3>
+
+            <p>
+              <strong>id</strong>: <%= user._id %><br>
+             
+              <strong>email</strong>:<%= user.local.email %><br>
+              <strong>password</strong>: <%= user.local.password %>
+            </p>
+
+            </div>
+        </div>
+
+      </div>
+    </div><!-- /.block-md-v .block-center -->
+  </div><!-- /.col-12 -->
+</div><!-- /.row .box -->
+
+
+
+<div class="row box">
+
+    <div class="col-12 block-md-v">
+      <div class="block-md-v block-center">
+        <h3>Project</h3>
+      </div>
+      <hr class="divider"></hr>
+    <!-- </div> --><!-- /.col-12 .block-md-v -->
+
+    <div class="col-4-off-2">
+      <div class="block-sm-v block-center">
+        <h4>Create New Project</h4>
+        <hr class="half-divider"></hr>
+        <div class="block-md">
+
+
+
+                <form action="/create?id=<%= user._id %>" method="post">
+
+
+                  <div class="form-group">
+                  <label>Project Name</label>
+                  <input id="name" type="text" class="form-control" name="name">
+                   <input type='hidden' id= 'hiddenField' name='id' value=<%= user._id %> />
+                  <input type='hidden' id= 'hiddenemail' name='email' value=<%= user.local.email %> />
+                  <input type='hidden' id= 'hiddenField' name='pass' value=<%= user.local.password %>/>
+
+                  </div>
+                  <button id="create" type="submit" class="btn btn-warning btn-lg">Create</button>
+              </form>
+                   
+            <div class="row">
+              <% if (typeof(message) !== 'undefined') { %>
+                <% if (message.length > 0) { %>
+                  <div class="alert alert-info"><%= message %></div>
+                <% } %>
+              <% } %>
+            </div>
+
+        </div><!-- /.block-md -->
+      </div><!-- /.block-md-v .block-center -->
+    </div><!-- /.col-4-off-2 -->
+
+    <div class="col-4-off-2">
+      <div class="block-sm-v block-center">
+        <h4>Load Project</h4>
+        <hr class="half-divider"></hr>
+        <div class="block-md">
+        
+        <button id="browse" type="submit" class="btn btn-warning btn-lg">Browse Projects</button>
+      <div class="load-overlay-sidebar">
+      </div>
+
+      <div id="options">
+                  
+                  <label>Projects</label>
+
+                  <select id="list" class="form-control form-group" name="project">
+                     <!--  <option value="one">One</option>
+                      <option value="two">Two</option> -->
+                     
+                  </select>
+
+                  <input type='hidden' id= 'hiddenField' name='id' value=<%= user._id %> />
+                  <input type='hidden' id= 'hiddenField' name='email' value=<%= user.local.email %> />
+                  <input type='hidden' id= 'hiddenField' name='pass' value=<%= user.local.password %>/>
+                <!--   <div class="row">
+                  </div>
+                   <div class="row">
+                  </div> -->
+              <!--      <div class="row">
+                  </div>
+                   <div class="row">
+                  </div> -->
+                   <div class="row">
+                  </div>
+                   <div class="row">
+                  </div>
+                   <div class="row">
+                  </div>
+
+                  <button type="submit" id="load" class="btn btn-warning btn-lg">Load</button>
+
+        </div>  
+
+
+        </div><!-- /.block-md -->
+      </div><!-- /.block-md-v .block-center -->
+    </div><!-- .col-4 -->
+</div>
+</div>
+  
+
+
+
+
+      <div class="row box">
+        <div class="col-12">
+          <div class="block-md-v block-center">
+                <div class="col-4-off-2">
+               <div class="block-sm-v block-center">
+
+
+                <div class="form-group">
+                  <label>Add Directory</label>
+                  <input id="code" type="text" class="form-control" name="repo">
+
+                </div>
+
+                  <button id="repo" type="submit" class="btn btn-warning btn-lg">Extend</button>
+                  
+                  <div class = "row"> <b>Head = </b><div id="text"></div></div>
+                  </div>
+                </div>
+
+              <div class="col-4-off-2">
+               <div class="block-sm-v block-center">
+
+
+                <div class="form-group">
+                  <label>Path</label>
+                  <input id="path" type="text" class="form-control" name="repo">
+                  <label>Document Name</label>
+                  <input id="doc" type="text" class="form-control" name="repo">
+                  <label>No.</label>
+                  <input id="no" type="text" class="form-control" name="repo">
+                </div>
+
+                  <button id="add" type="submit" class="btn btn-warning btn-lg">Add</button>
+                  
+                  </div>
+                </div>
+
+
+             </div>
+           </div>
+      </div>
+
+
+</div><!-- /.container -->
+  </div><!-- /#content -->
+
+</div><!-- /#wrapper -->
+</body>
+

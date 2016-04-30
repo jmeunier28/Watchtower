@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Watchtower Home</title>
+  <link rel="stylesheet" type="text/css" href="stylesheet.css"></link>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
+     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+  <script src="socket.io.js"></script>
+  <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="javascript.js"></script>
+</head>
+
+<body>
+<div id="wrapper">
+
+  <div id="sidebar">
+    <% include ../partials/sidebar %>
+  </div>
+
+  <div id="content">
+    <div class="container">
+      <div id="load-overlay-main"></div>
+
+      <!-- Title Header -->
+      <div class="row box">
+
+        <div class="col-12">
+          <div class="jumbotron text-center">
+
+          <div class="block-md-v block-center">
+            <% include ../partials/sidebar_icon %>
+              <h1>Watchtower</h1>
+                <hr class="divider"></hr>
+
+               <p> Watches your every move ;)</p>
+
+          </div><!-- /.block-md-v .block-center -->
+        </div><!-- /.col-12 -->
+      </div><!-- /.row .box -->
+</div>
+     
+
+      <div class="row box">
+        <div class="col-12">
+              <div class="jumbotron text-center">
+
+          <div class="block-md-v block-center">
+                  <h3><span class="fa fa-lock"></span>Authentication</h3>
+                  <hr class="divider"></hr>
+                     <div class="row">
+                        <h3>Login or Register with:</h3>
+                      </div>
+                      
+                      <div class="row">
+
+                          <a href="/login" class="btn btn-default"><span class="fa fa-user"></span> Local Login</a>
+                          <a href="/signup" class="btn btn-default"><span class="fa fa-user"></span> Local Signup</a>
+                      
+                      </div>
+
+                    </div>
+          </div><!-- /.block-md-v .block-center -->
+        </div><!-- /.col-12 -->
+      </div><!-- /.row .box -->
+
+    </div><!-- /.container -->
+  </div><!-- /#content -->
+</div><!-- /#wrapper -->
+</body>
+
+</html>

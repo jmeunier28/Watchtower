@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Watchtower</title>
+  <link rel="stylesheet" type="text/css" href="stylesheet.css"></link>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+  <script src="socket.io.js"></script>
+  <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="javascript.js"></script>
+</head>
+
+<body>
+<div id="wrapper">
+
+  <div id="sidebar">
+    <% include ../partials/sidebar %>
+  </div>
+
+  <div id="content">
+    <div class="container">
+      <div id="load-overlay-main"></div>
+
+      <!-- Title Header -->
+    <div class="row box">
+        <div class="col-12">
+          <div class="jumbotron text-center">
+
+             <div class="block-md-v block-center">
+                <% include ../partials/sidebar_icon %>
+                <h1>Watchtower</h1>
+                <hr class="divider"></hr>
+
+                <p> Watches your every move ;)</p>
+
+          </div><!-- /.block-md-v .block-center -->
+        </div><!-- /.col-12 -->
+      </div><!-- /.row .box -->
+</div>
+
+      <div class="row box">
+        <div class="col-12">
+          <div class="block-md-v block-center">
+              
+              <h1><span class="fa fa-sign-in"></span> Login</h1>
+
+                <!-- show any messages that come back with authentication -->
+               <% if (message.length > 0) { %>
+                  <div class="alert alert-danger"><%= message %></div>
+                 <% } %>
+
+          <div class="block-md-v block-center">
+                <!-- LOGIN FORM -->
+              <form action="/login" method="post">
+                  <div class="form-group">
+                  <label>Email</label>
+                  <input type="text" class="form-control" name="email">
+                  </div>
+        
+                  <div class="form-group">
+                  <label>Password</label>
+                  <input type="password" class="form-control" name="password">
+                  </div>
+
+                  <button type="submit" class="btn btn-warning btn-lg">Login</button>
+              </form>
+            </div>
+
+            <hr class="divider"></hr>
+            <div class="row">
+                <p>Need an account? <a href="/signup">Signup</a></p>
+                <p>Or go <a href="/">home</a>.</p> 
+            </div>           
+          </div><!-- /.block-md-v .block-center -->
+        </div><!-- /.col-12 -->
+      </div><!-- /.row .box -->
+
+
+
+
+
+
+</div><!-- /.container -->
+  </div><!-- /#content -->
+
+</div><!-- /#wrapper -->
+</body>

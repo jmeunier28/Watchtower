@@ -1,0 +1,272 @@
+/*
+    modules.scss
+    Modular classes that are reusable (boxes, containers, buttons, etc.).
+*/
+
+/* ---------------------------------------------------------- */
+// Boxes
+
+// Placeholder for theme styling
+.box {}
+
+/* ---------------------------------------------------------- */
+// Buttons
+
+$btn-width: 150px;
+$btn-width-lg: 225px;
+
+.btn, .btn-small, .btn-large {
+  display: block;
+  font-weight: 300;
+  letter-spacing: 2px;
+}
+
+.btn {
+  padding: $padding-md;
+  font-size: $font-size-default;
+  min-width: $btn-width;
+  margin: auto;
+}
+
+.btn-small {
+  padding: $padding-sm;
+  font-size: $font-size-small;
+}
+
+.btn-large {
+  padding: $padding-md;
+  min-width: $btn-width-lg;
+  font-size: $font-size-large;
+}
+
+/* ---------------------------------------------------------- */
+// Dividers
+
+.divider, .li-divider, .half-divider {
+  border-style: solid;
+  border-top: 1px solid;
+  border-bottom: 0;
+}
+
+.divider {
+  width: 100%;
+  margin: auto;
+}
+
+.li-divider {
+  width: 90%;
+  margin: auto;
+}
+
+.half-divider {
+  width: 50%;
+  margin: auto;
+}
+
+/* ---------------------------------------------------------- */
+// Sidebar
+
+.sidebar-list {
+  position: relative;
+  height: auto;
+  min-height: 5 * (14px * 3 + 2 * $padding-md);
+  height: 5 * (14px * 3 + 2 * $padding-md);
+  overflow-y: auto;
+  border: 1px solid;
+}
+
+.sidebar-list li div {
+  position: relative;
+  padding: $padding-md;
+}
+
+.sidebar-list li div:after {
+  content: '';
+  width: 90%;
+  margin: auto;
+  height: 1px;
+  position: absolute;
+  bottom: -1px;
+}
+
+.sidebar-list li:last-child div:after {
+  height: 0;
+}
+
+.sidebar-list li:first-child div:after {
+  height: 1px;
+}
+
+.sidebar-list li p {
+  min-height: $font-size-default;
+}
+
+/* ---------------------------------------------------------- */
+// Sidebar Icon Bar
+
+// Sidebar Iconbar
+.sidebar-button-container {
+  display: inline-block;
+  float: left;
+  line-height: $font-size-xlarge;
+  margin: $margin-sm $margin-md;
+  vertical-align: middle;
+}
+
+.header-sidebar-icon {
+  display: block;
+  padding: 8px;
+  border: 1px solid;
+  border-radius: 3px;
+
+  a.sidebar-icon-anchor {
+
+    span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      border-radius: 1px;
+      margin-top: 4px;
+      margin-bottom: 4px;
+      padding: 0;
+
+      &:first-child {
+        margin-top: 0px;
+        margin-bottom: 4px;
+      }
+
+      &:last-child {
+        margin-top: 4px;
+        margin-bottom: 0px;
+      }
+    }
+  }
+}
+
+/* ---------------------------------------------------------- */
+// Selector
+
+.selector {
+  position: relative;
+  font-size: $font-size-default;
+  text-align: center;
+  width: 80%;
+  margin: 0 auto;
+  outline: none;
+  cursor: pointer;
+
+  // Creates a up triangle on the right
+  &:after {
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    right: $padding-md;
+    top: 50%;
+    border-style: solid;
+    border-width: 0 6px 6px 6px;
+    margin-top: -3px;
+  }
+}
+
+.selector .selected,
+.selector .dropdown li a {
+  display: block;
+  padding: $padding-md;
+  text-decoration: none;
+  color: inherit;
+}
+
+.selector .selected {
+  border: 1px solid;
+}
+
+.selector .dropdown {
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  left: 0;
+  right: 0;
+  border-width: 0 1px 1px 1px;
+  border-style: solid;
+
+  // Hidden
+  opacity: 0;
+  pointer-events: none;
+}
+
+.selector .dropdown li a {
+  border-bottom: 1px solid;
+}
+
+.selector .dropdown li:last-child a {
+  border-bottom: 0;
+}
+
+// Active state
+.selector.active .dropdown {
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 900;
+}
+
+.selector.active {
+  &:after {
+    border-width: 6px 6px 0 6px;
+    margin-top: -3px;
+  }
+}
+
+/* ---------------------------------------------------------- */
+// Charts
+
+/* ---------------------------------------------------------- */
+// Load Overlay
+
+#load-overlay-sidebar, #load-overlay-main {
+  display:    none;
+  position:   absolute;
+  z-index:    1000;
+  top:        0;
+  left:       0;
+  height:     100%;
+  width:      100%;
+  background: rgba( 255, 255, 255, .8 )
+              url('ajax-loader.gif')
+              50% 50%
+              no-repeat;
+}
+
+#load-overlay-sidebar.loading, #load-overlay-main.loading {
+  display: block;
+}
+
+/* ---------------------------------------------------------- */
+// Sidebar (Not Used currently, but works for collapsing list)
+// TODO DO NOT DELETE THIS!!
+
+// ul.nav.nav-stacked.collapsing{
+//   -webkit-transition: none;
+//   transition: all 0.2s ease;
+// }
+
+// .sidebar-nav li a {
+//   text-indent: 0;
+//   display: block;
+//   text-decoration: none;
+//   padding: 0px $padding-lg;
+// }
+
+// ul.sidebar-nav li a {
+//   font-size: $font-size-default;
+// }
+//
+// ul.nav.nav-stacked li a {
+//   font-size: $font-size-small;
+//   text-indent: 10px;
+// }
+//
+// .nav.nav-stacked {
+//   text-decoration: none;
+// }
+/* ---------------------------------------------------------- */

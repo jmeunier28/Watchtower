@@ -1,0 +1,78 @@
+/*
+    layouts.scss
+    Contains important layout-related elements that define
+    basic padding and dimensions.
+*/
+
+/* ---------------------------------------------------------- */
+// Sections
+
+// Parent div that wraps header, content, and sidebar sections.
+#wrapper {
+  position: relative;
+  overflow: hidden;
+  min-height: 100%;
+}
+
+#content {
+  @include transition(0.5s);
+  min-height: 100%;
+  min-width: 100%;
+  margin: 0;
+  overflow: auto;
+}
+
+#wrapper.sidebar-toggled #content {
+  padding-left: $sidebar-width + $padding-md;
+}
+
+// Sidebar
+#sidebar {
+  @include transition(0.5s);
+  z-index: 900;
+  position: fixed;
+  left: -$sidebar-width;
+  width: $sidebar-width;
+  height: 100%;
+  white-space: nowrap;
+  overflow-y: auto;
+  display: inline-block;
+}
+
+#wrapper.sidebar-toggled #sidebar {
+  left: 0;
+  display: block;
+}
+
+.sidebar-wrapper {
+  top: 0;
+  margin: 0;
+  list-style: none;
+}
+
+/* ---------------------------------------------------------- */
+// Blocks - Used to provides padding for content blocks
+
+// Provides general padding to any block of content
+.block { padding: $padding-sm; }
+.block-md { padding: $padding-md; }
+.block-lg { padding: $padding-lg; }
+.block-sm-v { padding: $padding-sm 0; }
+.block-md-v { padding: $padding-md 0; }
+.block-lg-v { padding: $padding-lg 0; }
+
+.block-left {text-aling: left; }
+.block-right { text-align: right; }
+.block-center { text-align: center; }
+
+// Allows for its child div contents to be aligned vertically centered.
+// Parent div containing this class needs to have height defined.
+.block-vmiddle {
+  width: 100%;
+}
+
+.block-vmiddle > div {
+  display: inline;
+  vertical-align: middle !important;
+}
+/* ---------------------------------------------------------- */

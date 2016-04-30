@@ -1,0 +1,79 @@
+{
+  "name": "flare",
+  "Info": null,
+  "UID": null,
+  "children": [
+    {
+      "name": "analytics",
+      "Info": null,
+      "UID": null,
+      "children": [
+        {
+          "name": "cluster",
+          "children": [
+            {
+              "name": "AgglomerativeCluster",
+              "Info": null,
+              "UID": null
+            },
+            {
+              "name": "CommunityStructure",
+              "Info": null,
+              "UID": null
+            },
+            {
+              "name": "HierarchicalCluster",
+              "Info": null,
+              "UID": null
+            },
+            {
+              "name": "MergeEdge",
+              "Info": null,
+              "UID": null
+            }
+          ]
+        },
+        {
+          "name": "graph",
+          "children": [
+            {
+              "name": "BetweennessCentrality",
+              "Info": null,
+              "UID": null
+            },
+            {
+              "name": "LinkDistance",
+              "Info": null,
+              "UID": null
+            },
+            {
+              "name": "MaxFlowMinCut",
+              "Info": null,
+              "UID": null
+            },
+            {
+              "name": "ShortestPaths",
+              "Info": null,
+              "UID": 5
+            },
+            {
+              "name": "SpanningTree",
+              "Info": null,
+              "UID": null
+            }
+          ]
+        },
+        {
+          "name": "optimization",
+          "children": [
+            {
+              "name": "AspectRatioBanker",
+              "Info": null,
+              "UID": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

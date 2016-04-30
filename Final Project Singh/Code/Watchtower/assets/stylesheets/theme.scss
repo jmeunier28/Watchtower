@@ -1,0 +1,125 @@
+/*
+    theme.scss
+    All themes and style related elements go here
+*/
+
+/* ---------------------------------------------------------- */
+// Base
+body,
+html {
+  background: $alabaster;
+  color: $gray-30;
+}
+
+/* ---------------------------------------------------------- */
+// Box Modules
+.box {
+  background: $white;
+  @include box-shadow(0, 0, 1px, 1px, $shadow-10);
+}
+
+/* ---------------------------------------------------------- */
+// Button Modules
+
+.btn-green, .btn-green:link, .btn-green:visited {
+  @include background-gradient($green-de-york, $green-fern);
+  border-color: $gray-63;
+  color: $white;
+}
+.btn-green:hover {
+  @include background-gradient($green-fern, $green-de-york);
+  border-color: $gray-63;
+  color: $white;
+}
+
+.btn-red, .btn-red:link, .btn-red:visited {
+  @include background-gradient($red-flamingo, $red-cinnibar);
+  border-color: $gray-63;
+  color: $white;
+}
+.btn-red:hover {
+  @include background-gradient($red-cinnibar, $red-flamingo);
+  border-color: $gray-63;
+  color: $white;
+}
+
+.btn-yellow, .btn-yellow:link, .btn-yellow:visited {
+  @include background-gradient($yellow-cream-can, $yellow-saffron);
+  border-color: $gray-63;
+  color: $white;
+}
+.btn-yellow:hover {
+  @include background-gradient($yellow-saffron, $yellow-cream-can);
+  border-color: $gray-63;
+  color: $white;
+}
+
+.header-sidebar-icon {
+  border-color: $gray-63;
+}
+.sidebar-icon-bar {
+  background-color: $gray-63;
+}
+
+/* ---------------------------------------------------------- */
+// Divider
+
+.divider, .li-divider, .half-divider {
+  border-color: $gray-85;
+}
+
+/* ---------------------------------------------------------- */
+// Dropdown selectors
+
+.selector .selected,
+.selector .dropdown,
+.selector .dropdown li a {
+  border-color: $gray-70;
+}
+
+.selector {
+  background: $white;
+  color: inherit;
+}
+
+.selector .dropdown {
+  @include box-shadow(2px, 2px, 2px, 2px, $shadow-10);
+}
+
+.selector .dropdown li a {
+  background: $white;
+}
+
+.selector .dropdown li:hover a {
+  background: $blue-alice;
+}
+
+.selector.active {
+  background: $gray-91;
+}
+
+.selector:after {
+  border-color: $gray-70 transparent;
+}
+
+.selector.active:after {
+  border-color: $blue-royal transparent;
+}
+
+/* ---------------------------------------------------------- */
+// Sidebar
+
+#sidebar {
+    background: $white;
+    @include box-shadow(0, 0, 1px, 1px, $shadow-10);
+}
+
+/* ---------------------------------------------------------- */
+// List
+.sidebar-list {
+  border-color: $gray-85;
+}
+
+.sidebar-list li div:after {
+  background: $gray-85;
+}

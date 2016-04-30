@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+
+<head>
+  <title><%= title %></title>
+  <link rel="stylesheet" type="text/css" href="stylesheet.css"></link>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+  <script src="socket.io.js"></script>
+  <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="javascript.js"></script>
+</head>
+
+<body>
+<div id="wrapper">
+
+  <div id="sidebar">
+    <% include ../partials/sidebar %>
+  </div>
+
+  <div id="content">
+    <div class="container">
+      <div id="load-overlay-main"></div>
+
+      <!-- Title Header -->
+      <div class="row box">
+        <div class="col-12">
+          <div class="block-md-v block-center">
+            <% include ../partials/sidebar_icon %>
+              <h1><%= title %></h1>
+          </div><!-- /.block-md-v .block-center -->
+        </div><!-- /.col-12 -->
+      </div><!-- /.row .box -->
+
+      <div class="row box">
+        <div class="col-12">
+          <div class="block-md-v block-center">
+              <p>This is the project page where the user can build the tree.</p>
+            
+          </div><!-- /.block-md-v .block-center -->
+        </div><!-- /.col-12 -->
+      </div><!-- /.row .box -->
+
+
+
+
+
+
+
+
+<div class="box">
+  <div class="row">
+    <div class="col-12 block-md-v">
+      <div class="block-md-v block-center">
+        <h3>Average Room Temperature</h3>
+      </div>
+      <hr class="divider"></hr>
+      <div id="live-chart"></div>
+    </div><!-- /.col-12 .block-md-v -->
+  </div><!-- /.row -->
+
+  <hr class="li-divider"></hr>
+
+  <div class="row">
+    <div class="col-4 block-md-v block-center">
+      <h4>Room Temperature</h4>
+      <hr class="half-divider"></hr>
+      <div id="avg-value" class="block block-center block-md-v">
+        <h2></br></h2>
+      </div>
+    </div>
+
+    <div class="col-4 block-md-v block-center">
+      <h4>Nodes</h4>
+      <hr class="half-divider"></hr>
+      <div class="block block-center block-md-v">
+        <h2 id="avg-count"></br></h2>
+      </div>
+    </div>
+
+    <div class="col-4 block-md-v block-center block-md-v">
+      <h4>Time</h4>
+      <hr class="half-divider"></hr>
+      <div class="block block-center block-md-v">
+        <h2 id="avg-timestamp"></br></h2>
+      </div>
+    </div>
+  </div><!-- /.row -->
+
+</div><!-- /.box -->
+</div><!-- /.container -->
+  </div><!-- /#content -->
+
+</div><!-- /#wrapper -->
+</body>
