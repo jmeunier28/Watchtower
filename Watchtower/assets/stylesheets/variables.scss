@@ -1,0 +1,61 @@
+/*
+    variables.scss
+    Stylesheet variables that are used globally.
+    This must be imported first in stylesheet.scss before
+    any other scss files.
+*/
+
+/*---------------------------------------------------------*/
+// Typography variables.  1em = 14px font (defined @ base.scss)
+
+$font-size-xxlarge: 2em;
+$font-size-xlarge: 1.5em;     // ~21px
+$font-size-large: 1.15em;     // ~16px
+$font-size-default: 1em;      // ~14px (default)
+$font-size-small: 0.875em;    // ~12px
+$font-size-xsmall: 0.75em;    // ~10px
+
+/*---------------------------------------------------------*/
+// Layout values
+$screen-width: 1000px;
+
+$margin-sm: 5px;
+$margin-md: 10px;
+$margin-lg: 20px;
+
+$padding-sm: 5px;
+$padding-md: 10px;
+$padding-lg: 20px;
+
+$sidebar-width: 250px;
+
+/*---------------------------------------------------------*/
+// Colors
+$white: #ffffff;                    // Content background color
+$alabaster: #f8f8f8;                // Default background color
+
+$gray-20: #333333;
+$gray-24: #3d3d3d;
+$gray-30: #4d4d4d;                  // Default font color
+$gray-63: #a1a1a1;                  // Default border color
+$gray-70: #b3b3b3;
+$gray-85: #d9d9d9;                  // Default divider color
+$gray-91: #e8e8e8;
+
+$green-de-york: #70c781;            // Green used for button
+$green-fern: #64b374;               // Darker green for gradient offset
+
+$red-flamingo: #ef4836;             // Red used for button
+$red-cinnibar: #e74c3c;             // Darker red used for gradient offset
+
+$yellow-cream-can: #f5d76e;         // Yellow used for button
+$yellow-saffron: #f4d03f;           // Darker yellow used for gradient offset
+
+$blue-royal: #4183d7;               // Blue
+$blue-alice: #e4f1fe;
+
+// Shadows
+$shadow-10: rgba(0,0,0,0.1);
+$shadow-20: rgba(0,0,0,0.2);
+$shadow-40: rgba(0,0,0,0.4);
+$shadow-60: rgba(0,0,0,0.6);

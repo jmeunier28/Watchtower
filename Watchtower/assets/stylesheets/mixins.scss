@@ -1,0 +1,46 @@
+/*
+    mixins.scss
+    Reusable mixins.  Should be imported after variables, before every other
+    scss imports.
+*/
+
+// Background Gradient (Top to Bottom)
+@mixin background-gradient($start-color, $end-color) {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, $start-color), color-stop(1, $end-color));
+	background:-moz-linear-gradient(top, $start-color 5%, $end-color 100%);
+	background:-webkit-linear-gradient(top, $start-color 5%, $end-color 100%);
+	background:-o-linear-gradient(top, $start-color 5%, $end-color 100%);
+	background:-ms-linear-gradient(top, $start-color 5%, $end-color 100%);
+	background:linear-gradient(to bottom, $start-color 5%, $end-color 100%);
+}
+
+// Box Shadow
+@mixin box-shadow($x, $y, $blur, $spread, $color) {
+  -moz-box-shadow: $x $y $blur $spread $color;
+  -webkit-box-shadow: $x $y $blur $spread $color;
+  box-shadow: $x $y $blur $spread $color;
+}
+
+// Sets a equally spaced padding for inline items.
+@mixin inline_li_padding($padding) {
+  padding-left: $padding;
+  padding-right: $padding;
+
+  &:first-child {
+    padding-left: 0;
+    padding-right: $padding;
+  }
+  &:last-child {
+    padding-left: $padding;
+    padding-right: 0;
+  }
+}
+
+// Transition animation
+@mixin transition($sec) {
+  -webkit-transition: all $sec ease;
+  -moz-transition: all $sec ease;
+  -ms-transition: all $sec ease;
+  -o-transition: all $sec ease;
+  transition: all $sec ease;
+}

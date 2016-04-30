@@ -1,0 +1,29 @@
+{
+  "name": "watchtower",
+  "version": "1.0.0",
+  "description": "A Productivity managment tool for bio engineers",
+  "main": "app.js",
+  "scripts": {
+    "test": "node app.js"
+  },
+  "author": "Pranay Singh",
+  "license": "ISC",
+  "dependencies": {
+    "base64encodedecode": "0.0.14",
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.15.0",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.1",
+    "express-session": "^1.13.0",
+    "filendir": "^1.0.0",
+    "github-api": "^0.11.2",
+    "jsonfile": "^2.2.3",
+    "method-override": "^2.3.5",
+    "mongoose": "^4.4.10",
+    "morgan": "^1.7.0",
+    "nodemon": "^1.9.1",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "uuid4": "^1.0.0"
+  }
+}
