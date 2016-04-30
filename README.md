@@ -13,7 +13,8 @@ A Workflow Management Tool for Synthetic Biologists
 5. Navigate to the Watchtower folder in the terminal and type in `npm install`
 6. This should install all the depencies required to run the application. 
 7. There should now be a node_modules folder in your root directory. 
-8. In Watchtower/config/Repo.js and Watchtower/config/git_add.js make the changes listed in the comments (Your Github account). 
+8. You will also need to generate your github API Auth [token](https://github.com/settings/tokens/new).
+9. In `Watchtower/config/Repo.js` and `Watchtower/config/git_add.js` make the changes listed in the comments (Your Github account info + Auth token). 
 
 #### Mongodb
 
